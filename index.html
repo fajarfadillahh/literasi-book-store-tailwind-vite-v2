@@ -20,12 +20,25 @@
       rel="stylesheet"
     />
 
-    <!-- 🌙 ☀️ -->
+    <!-- On page load or when changing themes, best to add inline in `head` to avoid FOUC -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body class="font-text font-medium">
+  <body
+    class="font-text font-medium transition-all duration-300 dark:bg-gray-900"
+  >
     <!-- ===== HEADER SECTION ===== -->
     <header
-      class="header fixed w-full top-0 left-0 bg-gray-200 z-50 transition-all duration-300"
+      class="header fixed w-full top-0 left-0 bg-gray-200 z-50 transition-all duration-300 dark:bg-gray-900"
       id="header"
     >
       <div
@@ -33,7 +46,7 @@
       >
         <a
           href="#"
-          class="header__logo inline-flex items-center gap-2 text-[24px] text-gray-900 font-title font-semibold"
+          class="header__logo inline-flex items-center gap-2 text-[24px] text-gray-900 font-title font-semibold transition-all duration-300 dark:text-white"
         >
           <img src="./src/img/favicon.svg" alt="" class="header-icon w-6" />
           Literasi.
@@ -65,7 +78,12 @@
             class="header__theme absolute top-6 right-6 text-[1.5rem] cursor-pointer md:static"
             id="theme-toggle"
           >
-            <span class="header__theme-icon" id="themeToggleDarkIcon">🌙</span>
+            <span class="header__theme-icon hidden" id="themeToggleDarkIcon"
+              >🌙</span
+            >
+            <span class="header__theme-icon hidden" id="themeToggleLightIcon"
+              >☀️</span
+            >
           </div>
 
           <a href="#" class="header__button button mt-6 md:mt-0"
@@ -74,7 +92,7 @@
         </div>
 
         <div
-          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer md:hidden"
+          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer transition-all duration-300 md:hidden dark:text-white"
           id="header-toggle"
         >
           <i class="bx bx-grid-alt"></i>
@@ -85,7 +103,9 @@
 
     <main class="overflow-hidden">
       <!-- ===== HOME SECTION ===== -->
-      <section class="home section bg-gray-200">
+      <section
+        class="home section bg-gray-200 transition-all duration-300 dark:bg-gray-900"
+      >
         <div
           class="home__container container grid gap-12 lg:grid-cols-2 lg:items-center"
         >
@@ -107,12 +127,12 @@
             </p>
             <form
               action=""
-              class="home__form flex justify-between items-center gap-2 p-2 bg-white xs:w-[400px] xs:mx-auto sm:w-[420px] lg:mx-0"
+              class="home__form flex justify-between items-center gap-2 p-2 bg-white transition-all duration-300 xs:w-[400px] xs:mx-auto sm:w-[420px] lg:mx-0 dark:bg-gray-800"
             >
               <input
                 type="text"
                 placeholder="Enter ISBN Number"
-                class="home__input w-full h-[55px] px-2 bg-transparent text-[15px] text-gray-900 font-medium"
+                class="home__input w-full h-[55px] px-2 bg-transparent text-[15px] text-gray-900 font-medium dark:text-white"
               />
               <button class="home__button button">Search</button>
             </form>

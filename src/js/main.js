@@ -24,3 +24,36 @@ function stickyHeader() {
     : header.classList.remove("sticky-action");
 }
 window.addEventListener("scroll", stickyHeader);
+
+// ===== DARK MODE =====
+var themeToggleLightIcon = document.getElementById("themeToggleLightIcon");
+var themeToggleDarkIcon = document.getElementById("themeToggleDarkIcon");
+
+// change the icons inside the button based on previous settins
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  themeToggleLightIcon.classList.remove("hidden");
+} else {
+  themeToggleDarkIcon.classList.remove("hidden");
+}
+
+// theme toggle button
+var themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", () => {
+  // toggle icons inside button
+  themeToggleLightIcon.classList.toggle("hidden");
+  themeToggleDarkIcon.classList.toggle("hidden");
+
+  // if set via local storage previously
+  if (localStorage.theme === "light") {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+});
