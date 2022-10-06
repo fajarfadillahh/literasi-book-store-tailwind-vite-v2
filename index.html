@@ -39,8 +39,11 @@
           Literasi.
         </a>
 
-        <div class="header__menu" id="header-menu">
-          <ul class="header__list flex flex-col gap-6">
+        <div
+          class="header__menu md:flex md:items-center md:gap-6"
+          id="header-menu"
+        >
+          <ul class="header__list flex flex-col gap-6 md:flex-row">
             <li class="header__item">
               <a href="#" class="header__link">Home</a>
             </li>
@@ -57,17 +60,19 @@
 
           <!-- theme toggle -->
           <div
-            class="header__theme absolute top-6 right-6 text-[1.5rem] cursor-pointer"
+            class="header__theme absolute top-6 right-6 text-[1.5rem] cursor-pointer md:static"
             id="theme-toggle"
           >
             <span class="header__theme-icon" id="themeToggleDarkIcon">🌙</span>
           </div>
 
-          <a href="#" class="header__button button mt-6">Create account</a>
+          <a href="#" class="header__button button mt-6 md:mt-0"
+            >Create account</a
+          >
         </div>
 
         <div
-          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer"
+          class="header__toggle inline-flex text-[1.5rem] text-gray-900 cursor-pointer md:hidden"
           id="header-toggle"
         >
           <i class="bx bx-grid-alt"></i>
