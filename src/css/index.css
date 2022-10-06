@@ -52,3 +52,11 @@
 ::selection {
   @apply bg-green-600 text-white;
 }
+
+/* ===== ::-WEBKIT-SCROLLBAR ===== */
+::-webkit-scrollbar {
+  @apply w-2 bg-gray-900 bg-opacity-10 dark:bg-white dark:bg-opacity-10;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-900 bg-opacity-20 rounded-full hover:bg-opacity-30 dark:bg-white dark:bg-opacity-20 dark:hover:bg-opacity-30;
+}
