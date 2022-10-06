@@ -22,7 +22,7 @@
 
     <!-- 🌙 ☀️ -->
   </head>
-  <body class="font-text font-reguler">
+  <body class="font-text font-medium">
     <!-- ===== HEADER SECTION ===== -->
     <header
       class="header fixed w-full top-0 left-0 bg-gray-200 z-50 transition-all duration-300"
@@ -75,6 +75,43 @@
       </div>
     </header>
     <!-- ===== HEADER SECTION ===== -->
+
+    <main class="overflow-hidden">
+      <!-- ===== HOME SECTION ===== -->
+      <section class="home section bg-gray-200">
+        <div class="home__container container grid gap-12">
+          <div class="home__data justify-self-center text-center">
+            <h1 class="home__title section-title">
+              Buy and sell your <br />
+              textbooks for the <br />
+              best price.
+            </h1>
+            <p class="home__text section-text">
+              From applied literature to educational resources, we have a lot of
+              textbooks to offer you. We provide only the best books for rent.
+            </p>
+            <form
+              action=""
+              class="home__form flex justify-between items-center gap-2 p-2 bg-white"
+            >
+              <input
+                type="text"
+                placeholder="Enter ISBN Number"
+                class="home__input w-full h-[55px] px-2 bg-transparent text-[15px] text-gray-900 font-medium"
+              />
+              <button class="home__button button">Search</button>
+            </form>
+          </div>
+
+          <img
+            src="./src/img/home-img.png"
+            alt=""
+            class="home__img justify-self-center"
+          />
+        </div>
+      </section>
+      <!-- ===== HOME SECTION ===== -->
+    </main>
 
     <!-- ===== MAIN JS ===== -->
     <script type="module" src="./src/js/main.js"></script>
