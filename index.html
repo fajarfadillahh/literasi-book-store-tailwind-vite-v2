@@ -29,7 +29,7 @@
       id="header"
     >
       <div
-        class="header__container container h-24 flex justify-between items-center"
+        class="header__container container h-24 flex justify-between items-center lg:relative"
       >
         <a
           href="#"
@@ -43,7 +43,9 @@
           class="header__menu md:flex md:items-center md:gap-6"
           id="header-menu"
         >
-          <ul class="header__list flex flex-col gap-6 md:flex-row">
+          <ul
+            class="header__list flex flex-col gap-6 md:flex-row lg:absolute lg:left-[50%] lg:-translate-x-[50%] lg:gap-8"
+          >
             <li class="header__item">
               <a href="#" class="header__link">Home</a>
             </li>
@@ -84,22 +86,28 @@
     <main class="overflow-hidden">
       <!-- ===== HOME SECTION ===== -->
       <section class="home section bg-gray-200">
-        <div class="home__container container grid gap-12">
-          <div class="home__data justify-self-center text-center">
-            <h1 class="home__title section-title xs:text-[36px] sm:text-[42px]">
+        <div
+          class="home__container container grid gap-12 lg:grid-cols-2 lg:items-center"
+        >
+          <div
+            class="home__data justify-self-center text-center lg:justify-self-start lg:text-left"
+          >
+            <h1
+              class="home__title section-title leading-[130%] sm:text-[42px] lg:text-[48px]"
+            >
               Buy and sell your <br />
               textbooks for the <br />
               best price.
             </h1>
             <p
-              class="home__text section-text xs:w-[400px] xs:mx-auto sm:w-[420px]"
+              class="home__text section-text xs:w-[400px] xs:mx-auto sm:w-[420px] lg:mx-0"
             >
               From applied literature to educational resources, we have a lot of
               textbooks to offer you. We provide only the best books for rent.
             </p>
             <form
               action=""
-              class="home__form flex justify-between items-center gap-2 p-2 bg-white xs:w-[400px] xs:mx-auto sm:w-[420px]"
+              class="home__form flex justify-between items-center gap-2 p-2 bg-white xs:w-[400px] xs:mx-auto sm:w-[420px] lg:mx-0"
             >
               <input
                 type="text"
@@ -113,7 +121,7 @@
           <img
             src="./src/img/home-img.png"
             alt=""
-            class="home__img justify-self-center xs:w-[400px] sm:w-[420px]"
+            class="home__img justify-self-center xs:w-[400px] sm:w-[420px] lg:justify-self-end"
           />
         </div>
       </section>
